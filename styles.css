@@ -1,0 +1,89 @@
+@import url('https://fonts.cdnfonts.com/css/google-sans');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Product Sans', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.card_container {
+    margin: 150px auto;
+    height: 360px;
+    width: 360px;
+    perspective: 1000px;
+}
+
+.card {
+    height: 100%;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease-in-out;
+    position: relative;
+}
+
+.card_container:hover .card {
+    transform: rotateY(180deg);
+}
+
+.front_card,
+.back_card {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    padding: 20px;
+    backface-visibility: hidden;
+    position: absolute;
+}
+
+.front_card {
+    background-color: white;
+}
+
+.back_card {
+    transform: rotateY(180deg);
+    animation: flow-border 3s linear infinite;
+}
+
+.front_card img {
+    background-color: white;
+    height: 55px;
+    width: 250px;
+    display: block;
+    margin: 130px auto;
+}
+
+.btn{
+    color: black;
+    background-color: white;
+    padding: .5rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.name{
+    color: blue;
+    font-size: 1.5rem;
+}
+
+@keyframes flow-border {
+    0% {
+        border: 2px solid #020024;
+        background-position: 0% 50%;
+    }
+
+    50% {
+        border: 2px solid #ff0037;
+        background-position: 100% 50%;
+    }
+
+    100% {
+        border: 2px solid #020024;
+        background-position: 0% 50%;
+    }
+}
